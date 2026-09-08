@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: HR1
+    database: HR
+    schema: hr
+    tables:
+      - name: employees
+        description: "Employee master table"
+      - name: locations
+      - name: departments
+      - name: employees_snap
+      - name: jobs
+      - name: job_history
+      - name: countries
+      - name: regions
