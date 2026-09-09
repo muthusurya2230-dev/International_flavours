@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: jobs
+    description: "Job information including job title and salary range."
+
+    columns:
+      - name: job_id
+        description: "Unique identifier for the job."
+        data_type: varchar
+        tests:
+          - not_null
+          - unique
+
+      - name: job_title
+        description: "Title or name of the job."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: min_salary
+        description: "Minimum salary for the job."
+        data_type: number
+        tests:
+          - not_null
+
+      - name: max_salary
+        description: "Maximum salary for the job."
+        data_type: number
+        tests:
+          - not_null
+
+          

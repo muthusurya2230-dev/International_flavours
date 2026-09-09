@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: regions
+    description: "Regions table"
+    columns:
+      - name: region_id
+        description: "Unique identifier for the region"
+        data_type: number
+        data_tests:
+          - not_null
+          - unique
+
+      - name: region_name
+        description: "Name of the region"
+        data_type: varchar

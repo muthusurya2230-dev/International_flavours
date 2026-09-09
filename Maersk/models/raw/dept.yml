@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dept
+    description: "Department information containing department, manager, and location details."
+
+    columns:
+      - name: department_id
+        description: "Unique identifier for the department."
+        data_type: number
+        tests:
+          - not_null
+          - unique
+
+      - name: department_name
+        description: "Name of the department."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: manager_id
+        description: "Employee ID of the department manager."
+        data_type: number
+
+      - name: location_id
+        description: "Identifier of the department location."
+        data_type: number
+        tests:
+          - not_null

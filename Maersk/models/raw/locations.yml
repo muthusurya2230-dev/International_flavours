@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: locations
+    description: "Location information containing address, city, state, and country details."
+
+    columns:
+      - name: location_id
+        description: "Unique identifier for the location."
+        data_type: number
+        tests:
+          - unique
+
+      - name: street_address
+        description: "Street address of the location."
+        data_type: varchar
+
+      - name: postal_code
+        description: "Postal code of the location."
+        data_type: varchar
+
+      - name: city
+        description: "City where the location is situated."
+        data_type: varchar
+
+      - name: state_province
+        description: "State or province where the location is situated."
+        data_type: varchar
+
+      - name: country_id
+        description: "Identifier of the country for the location."
+        data_type: varchar

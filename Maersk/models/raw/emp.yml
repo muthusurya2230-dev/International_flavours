@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: emp
+    description: "Employee master data containing employee details, job information, salary, manager, and department."
+
+    columns:
+      - name: employee_id
+        description: "Unique identifier for each employee."
+        tests:
+          - not_null
+          - unique
+
+      - name: first_name
+        description: "Employee first name."
+
+      - name: last_name
+        description: "Employee last name."
+        tests:
+          - not_null
+
+      - name: email
+        description: "Employee email address."
+        tests:
+          - not_null
+          - unique
+
+      - name: phone_number
+        description: "Employee phone number."
+
+      - name: hire_date
+        description: "Date the employee was hired."
+        tests:
+          - not_null
+
+      - name: job_id
+        description: "Employee job identifier."
+        tests:
+          - not_null
+
+      - name: salary
+        description: "Employee salary."
+
+      - name: commission_pct
+        description: "Employee commission percentage."
+
+      - name: manager_id
+        description: "Employee manager identifier."
+
+      - name: department_id
+        description: "Employee department identifier."
