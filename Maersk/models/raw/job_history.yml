@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: job_history
+    description: "Employee job history containing employee, job, department, and employment date details."
+
+    columns:
+      - name: employee_id
+        description: "Unique identifier for the employee."
+        data_type: number
+        tests:
+          - not_null
+
+      - name: start_date
+        description: "Start date of the employee's job."
+        data_type: date
+        tests:
+          - not_null
+
+      - name: end_date
+        description: "End date of the employee's job."
+        data_type: date
+        tests:
+          - not_null
+
+      - name: job_id
+        description: "Identifier of the employee's job."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: department_id
+        description: "Identifier of the employee's department."
+        data_type: number
+        tests:
+          - not_null

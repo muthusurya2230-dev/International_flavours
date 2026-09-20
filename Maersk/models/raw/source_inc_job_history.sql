@@ -3,22 +3,24 @@
         materialized = 'incremental',
         incremental_strategy = 'delete+insert',
         database = 'HR',
-        unique_key = 'employee_id',
+        unique_key = 'job_history_id',
         on_schema_change = 'append_new_columns'
     )
 }}
 
-with emp as (
+with job_history as (
 
     select
-       *
-    from {{ source('HR1', 'employees') }}
+        *
+    from {{ source('HR1', 'job_history') }}
 
 )
 
-select * from emp
-
+select * from job_history
 
 {% if is_incremental() %}
-where update_date_time > (select max(update_date_time) from {{ this }})
+where update_date_time > (
+    select max(update_date_time)
+    from {{ this }}
+)
 {% endif %}

@@ -6,7 +6,6 @@
         unique_key = 'job_id',   
         on_schema_change = 'append_new_columns'   
     )   
-    
 }}   
    
 with jobs as (   

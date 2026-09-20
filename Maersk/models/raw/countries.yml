@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: countries
+    description: "Country information containing country name and region details."
+
+    columns:
+      - name: country_id
+        description: "Unique identifier for the country."
+        data_type: varchar
+        tests:
+          - not_null
+          - unique
+
+      - name: country_name
+        description: "Name of the country."
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: region_id
+        description: "Identifier of the region associated with the country."
+        data_type: number
+        tests:
+          - not_null

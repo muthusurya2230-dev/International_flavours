@@ -1,7 +1,7 @@
 {{ 
     config( 
         materialized = 'incremental', 
-        incremental_strategy = 'merge', 
+        incremental_strategy = 'delete+insert', 
         database = 'HR', 
         unique_key = 'country_id', 
         on_schema_change = 'append_new_columns' 

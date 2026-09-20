@@ -9,7 +9,6 @@ sources:
         description: "Employee master table"
       - name: locations
       - name: departments
-      - name: employees_snap
       - name: jobs
       - name: job_history
       - name: countries
