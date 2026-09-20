@@ -1,22 +1,22 @@
 {{  
     config(  
         materialized = 'incremental',  
-        incremental_strategy = 'merge',  
+        incremental_strategy = 'append',  
         database = 'HR',  
-        unique_key = 'location_id',  
+        unique_key = 'department_id',  
         on_schema_change = 'append_new_columns'  
     )  
 }}  
   
-with locations as (  
+with dept as (  
   
     select  
        *  
-    from {{ source('HR1', 'locations') }}  
+    from {{ source('HR1', 'departments') }}  
   
 )  
   
-select * from locations  
+select * from dept  
   
   
 {% if is_incremental() %}  
