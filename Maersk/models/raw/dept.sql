@@ -1,7 +1,7 @@
 {{  
     config(  
         materialized = 'incremental',  
-        incremental_strategy = 'delete+insert',  
+        incremental_strategy = 'merge',  
         database = 'HR',  
         unique_key = 'department_id',  
         on_schema_change = 'append_new_columns'  
@@ -12,7 +12,7 @@ with dept as (
   
     select  
        *  
-    from {{ source('HR1', 'departments') }}  
+    from {{ source('HR1', 'deptartments') }}  
   
 )  
   
